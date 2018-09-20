@@ -1,0 +1,67 @@
+.App {
+  max-width: 800px;
+  margin: auto;
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  position: relative;
+  background-color: black;
+  width: 100%;
+}
+
+.header::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.nav {
+  position: relative;
+  float: right;
+}
+
+.navItem {
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+  margin: 10px 10px 10px 0;
+  color: white;
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 1.2em;
+  cursor: pointer;
+}
+
+.navActive {
+  border-bottom: 2px solid rgb(207, 12, 126);
+}
+
+.navInactive:hover {
+  border-bottom: 2px solid white;
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+.footer-title {
+  position: relative;
+  width: 100%;
+  font-size: 2.5em;
+  padding: 20px 0 10px 20px;
+}
+
+.footer-content {
+  position: relative;
+  width: 100%;
+  padding: 10px 0 20px 20px;
+}
+
+.footer-item {
+  font-size: 1em;
+  padding: 0 0 5px 0;
+}
