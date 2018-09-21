@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="footer-item">A demo by Lucas Eckman</div>
         <div className="footer-item">React, Redux, Connected Router</div>
         <div className="footer-item">
-          Visit <span className="lucas-home">lucaseckman.com</span>
+          Visit <a href="http://www.lucaseckman.com" className="lucas-home">lucaseckman.com</a>
         </div>
       </div>
     </div>
