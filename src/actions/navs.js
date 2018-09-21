@@ -11,14 +11,14 @@ export const navToHome = () => {
   };
 };
 
-export const navToFeed = () => {
+export const navToConcerts = () => {
   return dispatch => {
-    dispatch(push("/feed"));
+    dispatch(push("/concerts"));
   };
 };
 
-export const navToProfile = () => {
+export const navToPlans = () => {
   return dispatch => {
-    dispatch(push("/profile"));
+    dispatch(push("/plans"));
   };
 };

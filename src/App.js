@@ -4,8 +4,8 @@ import "./App.css";
 import { Route } from "react-router-dom";
 
 import Home from "./views/Home";
-import Feed from "./views/Feed";
-import Profile from "./views/Profile";
+import Concerts from "./views/Concerts";
+import Plans from "./views/Plans";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -16,8 +16,8 @@ class App extends Component {
       <div className="App">
         <Header />
         <Route exact path="/" component={Home} />
-        <Route exact path="/feed" component={Feed} />
-        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/concerts" component={Concerts} />
+        <Route exact path="/plans" component={Plans} />
         <Footer />
       </div>
     );

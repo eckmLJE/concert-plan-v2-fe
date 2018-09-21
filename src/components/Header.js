@@ -3,12 +3,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { navToHome } from "../actions/navs";
-import { navToFeed } from "../actions/navs";
-import { navToProfile } from "../actions/navs";
+import { navToConcerts } from "../actions/navs";
+import { navToPlans } from "../actions/navs";
 
 class Header extends Component {
   state = {
-    activeNav: "feed"
+    activeNav: "home"
   };
 
   componentDidMount = () => {
@@ -33,11 +33,11 @@ class Header extends Component {
       case "home":
         this.props.navToHome();
         break;
-      case "feed":
-        this.props.navToFeed();
+      case "concerts":
+        this.props.navToConcerts();
         break;
-      case "profile":
-        this.props.navToProfile();
+      case "plans":
+        this.props.navToPlans();
         break;
       default:
         console.log("no nav");
@@ -51,11 +51,11 @@ class Header extends Component {
           <div name="home" className={this.checkNav("home")}>
             HOME
           </div>
-          <div name="feed" className={this.checkNav("feed")}>
-            FEED
+          <div name="concerts" className={this.checkNav("concerts")}>
+            CONCERTS
           </div>
-          <div name="profile" className={this.checkNav("profile")}>
-            PROFILE
+          <div name="plans" className={this.checkNav("plans")}>
+            PLANS
           </div>
         </div>
       </div>
@@ -70,8 +70,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   navToHome: () => dispatch(navToHome()),
-  navToFeed: () => dispatch(navToFeed()),
-  navToProfile: () => dispatch(navToProfile())
+  navToConcerts: () => dispatch(navToConcerts()),
+  navToPlans: () => dispatch(navToPlans())
 });
 
 export default connect(
