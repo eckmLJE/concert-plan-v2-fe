@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { navToHome } from "../actions/navs";
 import { navToConcerts } from "../actions/navs";
 import { navToPlans } from "../actions/navs";
+import { navToUser } from "../actions/navs";
 
 class Header extends Component {
   state = {
@@ -39,6 +40,9 @@ class Header extends Component {
       case "plans":
         this.props.navToPlans();
         break;
+      case "profile":
+        this.props.navToUser();
+        break;
       default:
         console.log("no nav");
     }
@@ -47,6 +51,7 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
+        <div className="header-title">CONCERTPLAN</div>
         <div className="nav" onClick={this.handleNav}>
           <div name="home" className={this.checkNav("home")}>
             HOME
@@ -57,6 +62,9 @@ class Header extends Component {
           <div name="plans" className={this.checkNav("plans")}>
             PLANS
           </div>
+          <div name="profile" className={this.checkNav("profile")}>
+            {this.props.loggedIn ? "PROFILE" : "LOG IN"}
+          </div>
         </div>
       </div>
     );
@@ -65,13 +73,16 @@ class Header extends Component {
 
 const mapStateToProps = state => ({
   activeNav: state.navs.activeNav,
-  location: state.router.location.pathname
+  location: state.router.location.pathname,
+  loggedIn: state.user.loggedIn,
+  currentUser: state.user.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
   navToHome: () => dispatch(navToHome()),
   navToConcerts: () => dispatch(navToConcerts()),
-  navToPlans: () => dispatch(navToPlans())
+  navToPlans: () => dispatch(navToPlans()),
+  navToUser: () => dispatch(navToUser())
 });
 
 export default connect(

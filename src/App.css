@@ -16,6 +16,15 @@
   display: table;
 }
 
+.header-title {
+  position: absolute;
+  color: white;
+  font-weight: 800;
+  font-size: 1.5em;
+  line-height: 2em;
+  padding: 0 0 0 20px;
+}
+
 .nav {
   position: relative;
   float: right;
@@ -50,13 +59,13 @@
 
 .footer-title {
   position: relative;
-  font-size: 2.5em;
+  font-size: 1.5em;
   padding: 20px 0 10px 20px;
 }
 
 .footer-content {
   position: relative;
-  padding: 10px 0 20px 20px;
+  padding: 0px 0 20px 20px;
 }
 
 .footer-item {
@@ -86,4 +95,18 @@ a:active {
   font-size: 2em;
   margin: auto;
   text-align: center;
+}
+
+.login {
+  position: relative;
+  width: 200px;
+  border: solid 1px black;
+  margin: auto;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.login input {
+  display: block;
 }

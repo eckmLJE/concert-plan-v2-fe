@@ -22,3 +22,9 @@ export const navToPlans = () => {
     dispatch(push("/plans"));
   };
 };
+
+export const navToUser = () => {
+  return dispatch => {
+    dispatch(push("/profile"));
+  };
+};
