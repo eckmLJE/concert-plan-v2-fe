@@ -23,22 +23,33 @@ class User extends Component {
 
   render() {
     return (
-      <div className="login">
-        <input
-          name="email"
-          type="text"
-          placeholder="email"
-          value={this.state.email}
-          onChange={this.handleInput}
-        />
-        <input
-          name="password"
-          type="password"
-          placeholder="password"
-          value={this.state.password}
-          onChange={this.handleInput}
-        />
-        <button onClick={this.handleLogin}>Log In</button>
+      <div className="user">
+        {this.props.loggedIn ? (
+          <div
+            style={{ color: "rgb(207, 12, 126)" }}
+            className="la-ball-clip-rotate"
+          >
+            <div />
+          </div>
+        ) : (
+          <div className="login">
+            <input
+              name="email"
+              type="text"
+              placeholder="email"
+              value={this.state.email}
+              onChange={this.handleInput}
+            />
+            <input
+              name="password"
+              type="password"
+              placeholder="password"
+              value={this.state.password}
+              onChange={this.handleInput}
+            />
+            <button onClick={this.handleLogin}>Log In</button>
+          </div>
+        )}
       </div>
     );
   }

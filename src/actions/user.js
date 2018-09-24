@@ -24,7 +24,7 @@ const getUser = () => {
       Authorization: `Bearer ${token()}`
     }
   });
-}
+};
 
 export const authenticateUser = userData => dispatch => {
   dispatch({ type: "AUTHENTICATING_USER" });
@@ -33,7 +33,7 @@ export const authenticateUser = userData => dispatch => {
       res.json().then(token => {
         localStorage.setItem("token", token.jwt);
         dispatch({ type: "USER_AUTHENTICATED" });
-        dispatch(loadUser())
+        dispatch(loadUser());
       });
     } else {
       dispatch({ type: "USER_AUTHENTICATION_FAILED" });
@@ -53,5 +53,7 @@ export const loadUser = () => dispatch => {
         dispatch({ type: "USER_LOGIN_FAILED" });
       }
     });
+  } else {
+    console.log("no token");
   }
 };

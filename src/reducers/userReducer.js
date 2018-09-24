@@ -27,6 +27,7 @@ const userReducer = (
     case "FETCHED_USER":
       return {
         ...state,
+        loggedIn: true,
         loadingUserStatus: false,
         currentUser: {
           id: action.user.data.id,
