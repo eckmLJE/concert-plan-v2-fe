@@ -1,55 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { authenticateUser } from "../actions/user";
+import LoginPanel from "../components/LoginPanel";
+import UserPanel from "../components/UserPanel";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 class User extends Component {
-  state = { email: "", password: "" };
-
-  handleInput = e => {
-    const property = e.target.getAttribute("name");
-    const change = e.target.value;
-    this.setState({
-      [property]: change
-    });
-  };
-
-  handleLogin = e => {
-    e.preventDefault();
-    const userData = this.state;
-    this.props.authenticateUser(userData);
-    this.setState({ email: "", password: "" });
-  };
-
   render() {
     return (
       <div className="user">
-        {this.props.loggedIn ? (
-          <div
-            style={{ color: "rgb(207, 12, 126)" }}
-            className="la-ball-clip-rotate"
-          >
-            <div />
-          </div>
-        ) : (
-          <div className="login">
-            <input
-              name="email"
-              type="text"
-              placeholder="email"
-              value={this.state.email}
-              onChange={this.handleInput}
-            />
-            <input
-              name="password"
-              type="password"
-              placeholder="password"
-              value={this.state.password}
-              onChange={this.handleInput}
-            />
-            <button onClick={this.handleLogin}>Log In</button>
-          </div>
-        )}
+        {!this.props.loggedIn && <LoginPanel />}
+        {this.props.loadingUserStatus || this.props.loadingAuthStatus ? (
+          <LoadingSpinner />
+        ) : null}
+        {this.props.currentUser && <UserPanel />}
       </div>
     );
   }
@@ -57,15 +21,16 @@ class User extends Component {
 
 const mapStateToProps = state => ({
   loggedIn: state.user.loggedIn,
-  currentUser: state.user.currentUser
+  currentUser: state.user.currentUser,
+  loadingUserStatus: state.user.loadingUserStatus,
+  loadingAuthStatus: state.user.loadingAuthStatus
 });
 
-const mapDispatchToProps = dispatch => ({
-  authenticateUser: userData => dispatch(authenticateUser(userData))
-  // navToHome: () => dispatch(navToHome())
-});
+// const mapDispatchToProps = dispatch => ({
+//   authenticateUser: userData => dispatch(authenticateUser(userData))
+// });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(User);

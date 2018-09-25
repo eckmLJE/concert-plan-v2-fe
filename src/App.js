@@ -23,10 +23,12 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/concerts" component={Concerts} />
-        <Route exact path="/plans" component={Plans} />
-        <Route exact path="/profile" component={User} />
+        <div className="content-container">
+          <Route exact path="/" component={Home} />
+          <Route exact path="/concerts" component={Concerts} />
+          <Route exact path="/plans" component={Plans} />
+          <Route exact path="/profile" component={User} />
+        </div>
         <Footer />
       </div>
     );

@@ -26,6 +26,11 @@ const getUser = () => {
   });
 };
 
+export const logOutUser = () => dispatch => {
+  localStorage.removeItem("token");
+  dispatch({ type: "LOGOUT_USER" });
+};
+
 export const authenticateUser = userData => dispatch => {
   dispatch({ type: "AUTHENTICATING_USER" });
   postUserAuthentication(userData).then(res => {

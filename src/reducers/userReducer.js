@@ -1,7 +1,7 @@
 const userReducer = (
   state = {
     loggedIn: false,
-    currentUser: {},
+    currentUser: null,
     loadingAuthStatus: false,
     loadingUserStatus: false
   },
@@ -35,6 +35,12 @@ const userReducer = (
           email: action.user.data.attributes.email,
           plans: action.user.data.attributes.plans
         }
+      };
+    case "LOGOUT_USER":
+      return {
+        ...state,
+        loggedIn: false,
+        currentUser: null
       };
     default:
       return state;
