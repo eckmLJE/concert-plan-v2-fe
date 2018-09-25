@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 
 import { fetchConcerts } from "../actions/concerts";
 
+import ConcertList from "../components/ConcertList"
+
 class Concerts extends Component {
   componentDidMount = () => {
     this.props.fetchConcerts("KovZ917A3Y7");
@@ -10,9 +12,9 @@ class Concerts extends Component {
 
   render() {
     return (
-      <div>
-        {this.props.concerts &&
-          this.props.concerts.map(concert => <div>{concert.name}</div>)}
+      <div className="concerts">
+        {this.props.concerts.length &&
+          <ConcertList />}
       </div>
     );
   }

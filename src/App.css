@@ -165,6 +165,33 @@ a:active {
   padding: 5px;
 }
 
+.concerts {
+  position: relative;
+  padding: 20px;
+}
+
+.concert-list {
+  position: relative;
+  margin: auto;
+}
+
+.concert-item {
+  margin-bottom: 20px;
+  border: solid 1px rgb(129, 129, 129);
+  border-radius: 5px;
+  padding: 15px;
+  height: 150px;
+}
+
+.concert-item img {
+  float: left;
+  height: 130px;
+  padding: 10px 20px 10px 0;
+}
+
+.concert-item-details {
+}
+
 /*!
  * Load Awesome v1.1.0 (http://github.danielcardoso.net/load-awesome/)
  * Copyright 2015 Daniel Cardoso <@DanielCardoso>
