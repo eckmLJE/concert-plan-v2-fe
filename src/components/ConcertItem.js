@@ -1,6 +1,8 @@
 import React from "react";
 import moment from "moment";
 
+import PlanButton from "./PlanButton";
+
 const findImageByRatio = images => {
   const image = images.find(img => img.ratio === "16_9");
   return image.url;
@@ -18,6 +20,7 @@ const ConcertItem = props => {
           )}
         </p>
         <p>{props.concert._embedded.venues[0].name}</p>
+        <PlanButton key={props.concert.tmid} concert={props.concert} />
       </div>
     </div>
   );

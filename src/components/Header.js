@@ -27,9 +27,11 @@ class Header extends Component {
 
   handleNav = e => {
     const nav = e.target.getAttribute("name");
-    this.setState({
-      activeNav: nav
-    });
+    if (nav) {
+      this.setState({
+        activeNav: nav
+      });
+    }
     switch (nav) {
       case "home":
         this.props.navToHome();

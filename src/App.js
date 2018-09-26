@@ -17,6 +17,7 @@ import { loadUser } from "./actions/user";
 class App extends Component {
   componentDidMount = () => {
     this.props.loadUser();
+    // if logged in, load plans
   };
 
   render() {
