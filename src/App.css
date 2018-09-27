@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   width: 100%;
   font-family: "Roboto", sans-serif;
@@ -67,11 +71,17 @@ a:active {
 
 /* FOOTER */
 
-.footer {
+.footer-container {
   position: relative;
   width: 100%;
   background-color: rgb(27, 27, 27);
   color: white;
+  height: 200px;
+}
+
+.footer {
+  max-width: 800px;
+  margin: auto;
 }
 
 .footer-title {
@@ -97,7 +107,7 @@ a:active {
 .content-container {
   max-width: 800px;
   margin: auto;
-  min-height: 300px;
+  min-height: 600px;
 }
 
 /* HOME */
@@ -260,19 +270,47 @@ a:active {
   padding: 15px;
 }
 
-.plan-item img {
-  float: right;
-  height: 130px;
+.plan-item::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
-.plan-label {
-  position: absolute;
-  padding: 5px 10px 5px 10px;
-  top: 0;
-  left: 10;
-  background-color: black;
+.plan-item-details {
+  position: relative;
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+.plan-user-details {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  padding: 5px;
+}
+
+.plan-user {
+  position: relative;
+  padding: 10px 5px 10px 5px;
+  border: solid 2px black;
+  margin: 10px 0 10px 0;
+}
+
+.join-plan {
+  position: relative;
+  display: inline-block;
+}
+
+.join-plan button {
+  text-align: center;
+  width: 120px;
+  padding: 10px 20px;
+  font-size: 1em;
+  z-index: 500;
+  cursor: pointer;
+  background-color: rgb(207, 12, 126);
   color: white;
-  font-size: 0.7em;
 }
 
 /*!
