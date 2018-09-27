@@ -16,7 +16,8 @@ class PlanButton extends Component {
         tmid: concert.id,
         datetime: concert.dates.start.dateTime,
         venue: concert._embedded.venues[0].name,
-        imgUrl: this.props.imgUrl
+        imgUrl: this.props.imgUrl,
+        creator_id: this.props.currentUser.id
       };
       this.props.postPlan(planData);
     } else {
@@ -54,7 +55,8 @@ class PlanButton extends Component {
 }
 
 const mapStateToProps = state => ({
-  plans: state.plans.plans
+  plans: state.plans.plans,
+  currentUser: state.user.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

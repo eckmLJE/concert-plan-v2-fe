@@ -6,6 +6,12 @@ import moment from "moment";
 import JoinPlanButton from "./JoinPlanButton";
 
 class PlanItem extends Component {
+  checkPlanStarter = () => {
+    const creatorId = this.props.plan.attributes["creator-id"];
+    const currentUserId = parseInt(this.props.currentUser.id, 10);
+    return creatorId === currentUserId;
+  };
+
   render() {
     return (
       <div className="plan-item">
@@ -22,8 +28,13 @@ class PlanItem extends Component {
           <p>{this.props.plan.attributes.venue}</p>
         </div>
         <div className="plan-user-details">
-          <JoinPlanButton plan={this.props.plan} />
+          {this.props.currentUser && this.checkPlanStarter() ? (
+            "You started this plan."
+          ) : (
+            <JoinPlanButton plan={this.props.plan} />
+          )}
           <div className="plan-users">
+            <h4>Signed on friends:</h4>
             {this.props.plan.attributes.users.map(user => (
               <div className="plan-user" key={user.id}>
                 {user.name}

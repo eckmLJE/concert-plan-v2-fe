@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 
+import { connect } from "react-redux";
+
+import { addPlanUser } from "../actions/plans";
+
 class JoinPlanButton extends Component {
   handleJoinPlan = e => {
     e.preventDefault();
-    console.log(this.props.plan);
+    this.props.addPlanUser(this.props.plan.id);
   };
 
   render() {
@@ -15,4 +19,11 @@ class JoinPlanButton extends Component {
   }
 }
 
-export default JoinPlanButton;
+const mapDispatchToProps = dispatch => ({
+  addPlanUser: planId => dispatch(addPlanUser(planId))
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(JoinPlanButton);
