@@ -265,7 +265,7 @@ a:active {
 .plan-item {
   position: relative;
   margin-bottom: 20px;
-  border: solid 1px rgb(129, 129, 129);
+  border: solid 1px rgb(189, 66, 66);
   border-radius: 5px;
   padding: 15px;
 }
@@ -283,6 +283,10 @@ a:active {
   padding: 5px;
 }
 
+.plan-item-details h3 {
+  margin-top: 0;
+}
+
 .plan-user-details {
   position: relative;
   display: inline-block;
@@ -292,7 +296,8 @@ a:active {
 
 .plan-user {
   position: relative;
-  padding: 10px 5px 10px 5px;
+  display: inline-block;
+  padding: 10px 10px 10px 10px;
   border: solid 2px black;
   margin: 10px 0 10px 0;
 }

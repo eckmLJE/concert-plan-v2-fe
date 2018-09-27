@@ -6,21 +6,16 @@ import { navToHome } from "../actions/navs";
 import { navToConcerts } from "../actions/navs";
 import { navToPlans } from "../actions/navs";
 import { navToUser } from "../actions/navs";
+import { setActiveNav } from "../actions/navs";
 
 class Header extends Component {
-  state = {
-    activeNav: "home"
-  };
-
   componentDidMount = () => {
     const nav = this.props.location.slice(1);
-    nav
-      ? this.setState({ activeNav: nav })
-      : this.setState({ activeNav: "home" });
+    nav ? this.props.setActiveNav(nav) : this.props.setActiveNav("home");
   };
 
   checkNav = name => {
-    return this.state.activeNav === name
+    return this.props.activeNav === name
       ? "navItem navActive"
       : "navItem navInactive";
   };
@@ -28,9 +23,7 @@ class Header extends Component {
   handleNav = e => {
     const nav = e.target.getAttribute("name");
     if (nav) {
-      this.setState({
-        activeNav: nav
-      });
+      this.props.setActiveNav(nav);
     }
     switch (nav) {
       case "home":
@@ -86,7 +79,8 @@ const mapDispatchToProps = dispatch => ({
   navToHome: () => dispatch(navToHome()),
   navToConcerts: () => dispatch(navToConcerts()),
   navToPlans: () => dispatch(navToPlans()),
-  navToUser: () => dispatch(navToUser())
+  navToUser: () => dispatch(navToUser()),
+  setActiveNav: nav => dispatch(setActiveNav(nav))
 });
 
 export default connect(
