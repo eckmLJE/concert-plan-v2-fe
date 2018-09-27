@@ -28,15 +28,20 @@ const plansReducer = (
       };
     case "START_POSTING_PLAN":
       return {
-        ...state, 
+        ...state,
         postingPlanStatus: true
-      }
+      };
     case "ADD_POSTED_PLAN":
       return {
         ...state,
         postingPlanStatus: false,
         plans: [...state.plans, action.plan]
-      }
+      };
+    case "CLEAR_PLANS":
+      return {
+        ...state,
+        plans: []
+      };
     default:
       return state;
   }

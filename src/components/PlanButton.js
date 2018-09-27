@@ -2,40 +2,50 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { postPlan } from "../actions/plans";
+import { navToPlanId } from "../actions/navs";
 
 class PlanButton extends Component {
   handleStartPlan = e => {
     e.preventDefault();
-    const concert = this.props.concert;
-    const planData = {
-      name: concert.name,
-      tmid: concert.id,
-      datetime: concert.dates.start.dateTime,
-      venue: concert._embedded.venues[0]
-    };
-    this.props.postPlan(planData);
+    const name = e.target.getAttribute("name");
+    if (name === "make-plan") {
+      const concert = this.props.concert;
+
+      const planData = {
+        name: concert.name,
+        tmid: concert.id,
+        datetime: concert.dates.start.dateTime,
+        venue: concert._embedded.venues[0].name,
+        imgUrl: this.props.imgUrl
+      };
+      this.props.postPlan(planData);
+    } else {
+      this.props.navToPlanId(name);
+    }
   };
 
   checkConcertPlan = () => {
     const concertPlan = this.props.plans.find(
       plan => plan.attributes.tmid === this.props.concert.id
     );
-    console.log(concertPlan);
     return concertPlan ? concertPlan.id : false;
-    // return this.props.plans.includes(plan => plan.tmid === this.props.concert.id)
   };
 
   render() {
     const concertPlanId = this.checkConcertPlan();
     return (
       <div className="plan-button">
-        {concertPlanId ? (
+        {concertPlanId && !!this.props.plans.length ? (
           <div className="view-plan-button">
-            <button onClick={this.handleStartPlan}>View Plan</button>
+            <button name={concertPlanId} onClick={this.handleStartPlan}>
+              View Plan
+            </button>
           </div>
         ) : (
           <div className="make-plan-button">
-            <button onClick={this.handleStartPlan}>Start Plan</button>
+            <button name="make-plan" onClick={this.handleStartPlan}>
+              Start Plan
+            </button>
           </div>
         )}
       </div>
@@ -48,7 +58,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  postPlan: planData => dispatch(postPlan(planData))
+  postPlan: planData => dispatch(postPlan(planData)),
+  navToPlanId: id => dispatch(navToPlanId(id))
 });
 
 export default connect(

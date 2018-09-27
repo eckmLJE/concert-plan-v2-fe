@@ -33,14 +33,14 @@ export const postPlan = plan => {
         Authorization: `Bearer ${token()}`
       }
     })
-      .then(res => res.json())
-      .then(console.log);
-    // .then(resp => {
-    //   resp.status === 200
-    //     ? resp
-    //         .json()
-    //         .then(json => dispatch({ type: "ADD_POSTED_PLAN", plan: json.data }))
-    //     : dispatch({ type: "PLANS_AUTH_FAILED" });
-    // });
+      .then(resp => {
+        resp.status === 202
+          ? resp
+              .json()
+              .then(json =>
+                dispatch({ type: "ADD_POSTED_PLAN", plan: json.data })
+              )
+          : dispatch({ type: "PLANS_AUTH_FAILED" });
+      });
   };
 };

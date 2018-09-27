@@ -3,17 +3,13 @@ import { connect } from "react-redux";
 
 import LoginPanel from "../components/LoginPanel";
 import UserPanel from "../components/UserPanel";
-import LoadingSpinner from "../components/LoadingSpinner";
 
 class User extends Component {
   render() {
     return (
       <div className="user">
         {!this.props.loggedIn && <LoginPanel />}
-        {this.props.loadingUserStatus || this.props.loadingAuthStatus ? (
-          <LoadingSpinner />
-        ) : null}
-        {this.props.currentUser && <UserPanel />}
+        {!!this.props.currentUser && <UserPanel />}
       </div>
     );
   }

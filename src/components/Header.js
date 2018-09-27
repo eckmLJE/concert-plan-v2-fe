@@ -52,20 +52,22 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="header">
-        <div className="header-title">CONCERTPLAN</div>
-        <div className="nav" onClick={this.handleNav}>
-          <div name="home" className={this.checkNav("home")}>
-            HOME
-          </div>
-          <div name="concerts" className={this.checkNav("concerts")}>
-            CONCERTS
-          </div>
-          <div name="plans" className={this.checkNav("plans")}>
-            PLANS
-          </div>
-          <div name="profile" className={this.checkNav("profile")}>
-            {this.props.loggedIn ? "PROFILE" : "LOG IN"}
+      <div className="header-container">
+        <div className="header">
+          <div className="header-title">CONCERTPLAN</div>
+          <div className="nav" onClick={this.handleNav}>
+            <div name="home" className={this.checkNav("home")}>
+              HOME
+            </div>
+            <div name="concerts" className={this.checkNav("concerts")}>
+              CONCERTS
+            </div>
+            <div name="plans" className={this.checkNav("plans")}>
+              PLANS
+            </div>
+            <div name="profile" className={this.checkNav("profile")}>
+              {this.props.loggedIn ? "PROFILE" : "LOG IN"}
+            </div>
           </div>
         </div>
       </div>

@@ -13,6 +13,7 @@ export const navToHome = () => {
 
 export const navToConcerts = () => {
   return dispatch => {
+    dispatch({ type: "CLEAR_PLANS" });
     dispatch(push("/concerts"));
   };
 };
@@ -20,6 +21,12 @@ export const navToConcerts = () => {
 export const navToPlans = () => {
   return dispatch => {
     dispatch(push("/plans"));
+  };
+};
+
+export const navToPlanId = id => {
+  return dispatch => {
+    dispatch(push(`/plans/${id}`));
   };
 };
 

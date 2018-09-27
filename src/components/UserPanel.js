@@ -9,10 +9,15 @@ const UserPanel = props => {
       <div className="log-out">
         <button onClick={props.logOutUser}>Log Out</button>
       </div>
+
       <div className="user-data">
-        <div className="user-data-item">Username: {props.currentUser.name}</div>
-        <div className="user-data-item">Email: {props.currentUser.email}</div>
-        <div className="user-data-item">Number of Plans: {props.currentUser.plans.length}</div>
+        <p>
+          <strong>Username:</strong> {props.currentUser.name}
+        </p>
+        <p>
+          <strong>Email:</strong> {props.currentUser.email}
+        </p>
+        <br />
       </div>
     </div>
   );

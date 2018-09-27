@@ -12,7 +12,7 @@ class Plans extends Component {
 
   render() {
     return (
-      <div className="plans">{this.props.plans.length && <PlansList />}</div>
+      <div className="plans">{!!this.props.plans.length && <PlansList />}</div>
     );
   }
 }

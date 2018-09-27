@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+
 import moment from "moment";
 
 import PlanButton from "./PlanButton";
@@ -9,9 +11,10 @@ const findImageByRatio = images => {
 };
 
 const ConcertItem = props => {
+  const imgUrl = findImageByRatio(props.concert.images);
   return (
     <div className="concert-item">
-      <img src={findImageByRatio(props.concert.images)} alt="" />
+      <img src={imgUrl} alt="" />
       <div className="concert-item-details">
         <h3>{props.concert.name}</h3>
         <p>
@@ -20,10 +23,26 @@ const ConcertItem = props => {
           )}
         </p>
         <p>{props.concert._embedded.venues[0].name}</p>
-        <PlanButton key={props.concert.tmid} concert={props.concert} />
+        {props.loggedIn ? (
+          <PlanButton
+            imgUrl={imgUrl}
+            key={props.concert.tmid}
+            concert={props.concert}
+          />
+        ) : null}
       </div>
     </div>
   );
 };
 
-export default ConcertItem;
+const mapStateToProps = state => ({
+  loggedIn: state.user.loggedIn
+});
+
+// const mapDispatchToProps = dispatch => ({
+// });
+
+export default connect(
+  mapStateToProps,
+  null
+)(ConcertItem);
