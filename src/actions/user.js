@@ -1,3 +1,5 @@
+import { fetchPlans } from "./plans";
+
 const url = "http://localhost:3000/api/v1";
 
 const token = () => {
@@ -49,14 +51,17 @@ export const loadUser = () => dispatch => {
     dispatch({ type: "FETCHING_USER" });
     getUser().then(resp => {
       if (resp.status === 200) {
-        resp.json().then(user => {
-          dispatch({ type: "FETCHED_USER", user });
-        });
+        resp
+          .json()
+          .then(user => {
+            dispatch({ type: "FETCHED_USER", user });
+            dispatch(fetchPlans());
+          })
       } else {
         dispatch({ type: "USER_LOGIN_FAILED" });
       }
     });
   } else {
-    console.log("no token");
+    dispatch({ type: "LOAD_USER_FAILED" });
   }
 };
