@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { postPlan } from "../actions/plans";
-import { navToPlanId } from "../actions/navs";
 
 class MakePlanButton extends Component {
   handleStartPlan = e => {
@@ -21,25 +20,19 @@ class MakePlanButton extends Component {
 
   render() {
     return (
-      <div className="plan-button">
-        <div className="make-plan-button">
-          <button name="make-plan" onClick={this.handleStartPlan}>
-            Start Plan
-          </button>
-        </div>
+      <div className="plan-button make-plan-button">
+        <button onClick={this.handleStartPlan}>Start Plan</button>
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  plans: state.plans.plans,
   currentUser: state.user.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
-  postPlan: planData => dispatch(postPlan(planData)),
-  navToPlanId: id => dispatch(navToPlanId(id))
+  postPlan: planData => dispatch(postPlan(planData))
 });
 
 export default connect(
