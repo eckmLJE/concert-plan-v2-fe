@@ -16,14 +16,14 @@
   cursor: pointer;
 }
 
-.make-plan-button button {
-  background-color: rgb(207, 12, 126);
-  border: none;
-  color: white;
+.start-plan-button button {
+  border: solid 2px black;
 }
 
 .view-plan-button button {
-  border: solid 2px black;
+  background-color: rgb(207, 12, 126);
+  border: none;
+  color: white;
 }
 
 .join-plan button {

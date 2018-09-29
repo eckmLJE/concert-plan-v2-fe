@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 
-import MakePlanButton from "../components/MakePlanButton";
+import StartPlanButton from "../components/StartPlanButton";
 import ViewPlanButton from "../components/ViewPlanButton";
 
 class PlanButtonSwitcher extends Component {
@@ -17,7 +17,7 @@ class PlanButtonSwitcher extends Component {
     return concertPlan ? (
       <ViewPlanButton planId={concertPlan} key={this.props.concert.tmid} />
     ) : (
-      <MakePlanButton
+      <StartPlanButton
         concert={this.props.concert}
         imgUrl={this.props.imgUrl}
         key={this.props.concert.tmid}

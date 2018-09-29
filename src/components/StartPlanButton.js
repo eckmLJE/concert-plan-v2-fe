@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import { postPlan } from "../actions/plans";
 
-class MakePlanButton extends Component {
+class StartPlanButton extends Component {
   handleStartPlan = e => {
     e.preventDefault();
     const concert = this.props.concert;
@@ -20,7 +20,7 @@ class MakePlanButton extends Component {
 
   render() {
     return (
-      <div className="plan-button make-plan-button">
+      <div className="plan-button start-plan-button">
         <button onClick={this.handleStartPlan}>Start Plan</button>
       </div>
     );
@@ -38,4 +38,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MakePlanButton);
+)(StartPlanButton);
