@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import "../css/User.css";
+
 import LoginPanel from "../components/LoginPanel";
 import UserPanel from "../components/UserPanel";
 

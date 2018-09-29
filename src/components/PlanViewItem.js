@@ -8,8 +8,7 @@ import JoinPlanButton from "./JoinPlanButton";
 class PlanViewItem extends Component {
   checkPlanStarter = () => {
     const creatorId = this.props.plan.attributes["creator-id"];
-    const currentUserId = parseInt(this.props.currentUser.id, 10);
-    return creatorId === currentUserId;
+    return creatorId === this.props.currentUser.id;
   };
 
   render() {

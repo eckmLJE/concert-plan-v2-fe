@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import "../css/PlanView.css";
+
 import { connect } from "react-redux";
 
 import PlanViewItem from "../components/PlanViewItem";
