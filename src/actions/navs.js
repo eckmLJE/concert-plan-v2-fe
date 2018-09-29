@@ -27,6 +27,7 @@ export const navToPlans = () => {
 export const navToPlanId = id => {
   return dispatch => {
     dispatch(push(`/plans/${id}`));
+    dispatch(setActiveNav("plans"));
   };
 };
 

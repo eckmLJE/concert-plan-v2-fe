@@ -1,13 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import PlanItem from "./PlanItem";
+import PlanListItem from "./PlanListItem";
 
 const PlanList = props => {
   return (
     <div className="plan-list">
       {props.plans.map(plan => (
-        <PlanItem key={plan.id} plan={plan} />
+        <PlanListItem key={plan.id} plan={plan} />
       ))}
     </div>
   );
