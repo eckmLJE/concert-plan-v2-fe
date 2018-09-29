@@ -5,7 +5,7 @@ import moment from "moment";
 
 import JoinPlanButton from "./JoinPlanButton";
 
-class PlanItem extends Component {
+class PlanViewItem extends Component {
   checkPlanStarter = () => {
     const creatorId = this.props.plan.attributes["creator-id"];
     const currentUserId = parseInt(this.props.currentUser.id, 10);
@@ -54,4 +54,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   null
-)(PlanItem);
+)(PlanViewItem);

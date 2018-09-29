@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import PlanListItem from "./PlanListItem";
+import PlanListItem from "../components/PlanListItem";
 
 const PlanList = props => {
   return (

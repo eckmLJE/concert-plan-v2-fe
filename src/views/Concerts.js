@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import "../css/Concerts.css";
+import "../css/Buttons.css";
 
 import { fetchConcerts } from "../actions/concerts";
 import { fetchPlans } from "../actions/plans";
 
-import ConcertList from "../components/ConcertList";
+import ConcertList from "../containers/ConcertList";
 
 class Concerts extends Component {
   componentDidMount = () => {

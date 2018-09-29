@@ -1,0 +1,32 @@
+.footer-container {
+  position: relative;
+  width: 100%;
+  background-color: rgb(27, 27, 27);
+  color: white;
+  height: 200px;
+}
+
+.footer {
+  max-width: 800px;
+  margin: auto;
+}
+
+.footer-title {
+  position: relative;
+  font-size: 1.5em;
+  padding: 20px 0 10px 20px;
+}
+
+.footer-content {
+  position: relative;
+  padding: 0px 0 20px 20px;
+}
+
+.footer-item {
+  font-size: 1em;
+  padding: 0 0 5px 0;
+}
+
+.lucas-home {
+  border-bottom: 2px solid rgb(207, 12, 126);
+}

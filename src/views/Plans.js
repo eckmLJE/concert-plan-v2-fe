@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import "../css/Plans.css"
+import "../css/Buttons.css"
 
 import { fetchPlans } from "../actions/plans";
 
-import PlansList from "../components/PlanList";
+import PlansList from "../containers/PlanList";
 
 class Plans extends Component {
   componentDidMount = () => {

@@ -1,0 +1,38 @@
+.plan-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 150px;
+  padding: 10px;
+}
+
+.plan-button button {
+  text-align: center;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 1em;
+  margin: auto;
+  z-index: 500;
+  cursor: pointer;
+}
+
+.make-plan-button button {
+  background-color: rgb(207, 12, 126);
+  border: none;
+  color: white;
+}
+
+.view-plan-button button {
+  border: solid 2px black;
+}
+
+.join-plan button {
+  text-align: center;
+  width: 120px;
+  padding: 10px 20px;
+  font-size: 1em;
+  z-index: 500;
+  cursor: pointer;
+  background-color: rgb(207, 12, 126);
+  color: white;
+}

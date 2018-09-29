@@ -1,13 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import ConcertItem from "./ConcertItem";
+import ConcertListItem from "../components/ConcertListItem";
 
 const ConcertList = props => {
   return (
     <div className="concert-list">
       {props.concerts.map(concert => (
-        <ConcertItem key={concert.id} concert={concert} />
+        <ConcertListItem key={concert.id} concert={concert} />
       ))}
     </div>
   );

@@ -1,0 +1,73 @@
+/* LOGIN */
+
+.login {
+  position: relative;
+  width: 300px;
+  margin: auto;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.login input {
+  display: block;
+  border: solid 1px black;
+  height: 30px;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 5px;
+  font-size: 1em;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.login button {
+  background-color: rgb(207, 12, 126);
+  border: none;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 1em;
+  margin: auto;
+}
+
+.loading-spinner {
+  position: relative;
+  margin: auto;
+}
+
+/* USER */
+
+.user {
+  margin: auto;
+  max-width: 500px;
+  padding: 50px;
+}
+
+.user-panel {
+  border: solid 2px rgb(207, 12, 126);
+  padding: 10px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+
+.log-out button {
+  position: relative;
+  float: right;
+  background-color: rgb(207, 12, 126);
+  border: none;
+  color: white;
+  text-align: center;
+  width: 85px;
+  padding: 5px 0 5px 0;
+  font-size: 0.75em;
+  margin-top: 10px;
+  z-index: 500;
+}
+
+.user-data {
+  position: relative;
+  padding: 10px;
+}

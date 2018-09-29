@@ -1,0 +1,29 @@
+/* CONCERTS */
+
+.concerts {
+  position: relative;
+  padding: 20px;
+}
+
+.concert-list {
+  position: relative;
+  margin: auto;
+}
+
+.concert-item {
+  position: relative;
+  margin-bottom: 20px;
+  border: solid 1px rgb(129, 129, 129);
+  border-radius: 5px;
+  padding: 15px;
+  height: 150px;
+}
+
+.concert-item img {
+  float: left;
+  height: 130px;
+  padding: 10px 20px 10px 0;
+}
+
+.concert-item-details {
+}
