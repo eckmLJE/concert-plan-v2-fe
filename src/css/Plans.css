@@ -72,17 +72,24 @@
   display: table;
 }
 
-.plan-list-item-name {
+.plan-list-item-info {
   float: left;
+  width: 70%;
+}
+
+.plan-list-item-name {
   font-size: 1.2em;
-  line-height: 50px;
+  padding: 5px 10px 5px 10px;
+}
+
+.plan-list-item-friends {
   padding: 5px 10px 5px 10px;
 }
 
 .plan-list-item-button {
   float: right;
   width: 150px;
-  padding: 10px;
+  padding: 10px 5px 5px 5px;
 }
 
 .plan-list-item-button button {
@@ -96,4 +103,10 @@
   background-color: rgb(207, 12, 126);
   border: none;
   color: white;
+}
+
+@media only screen and (max-width: 575px) {
+  .plan-list-item-info {
+    width: 100%;
+  }
 }

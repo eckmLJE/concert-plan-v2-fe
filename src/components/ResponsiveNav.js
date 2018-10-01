@@ -5,7 +5,8 @@ import { navToHome } from "../actions/navs";
 import { navToConcerts } from "../actions/navs";
 import { navToPlans } from "../actions/navs";
 import { navToUser } from "../actions/navs";
-import { setActiveNav } from "../actions/navs";
+
+import { navTo } from "../actions/navs";
 
 class MainNav extends Component {
   state = { hamActive: false };
@@ -16,26 +17,17 @@ class MainNav extends Component {
       : "navItem navInactive";
   };
 
+  switchHam = () => {
+    this.setState({
+      hamActive: !this.state.hamActive
+    });
+  };
+
   handleNav = e => {
     const nav = e.target.getAttribute("name");
-    if (nav) {
-      this.props.setActiveNav(nav);
-    }
-    switch (nav) {
-      case "home":
-        this.props.navToHome();
-        break;
-      case "concerts":
-        this.props.navToConcerts();
-        break;
-      case "plans":
-        this.props.navToPlans();
-        break;
-      case "profile":
-        this.props.navToUser();
-        break;
-      default:
-        console.log("no nav");
+    console.log(nav);
+    if (nav || nav === "") {
+      this.props.navTo(nav);
     }
   };
 
@@ -43,7 +35,7 @@ class MainNav extends Component {
     return (
       <Fragment>
         <div className="nav" onClick={this.handleNav}>
-          <div name="home" className={this.checkNav("home")}>
+          <div name="" className={this.checkNav("")}>
             HOME
           </div>
           <div name="concerts" className={this.checkNav("concerts")}>
@@ -57,17 +49,14 @@ class MainNav extends Component {
           </div>
         </div>
         <div className="nav-mobile">
-          <div
-            className="hamburger"
-            onClick={() => this.setState({ hamActive: !this.state.hamActive })}
-          >
+          <div className="hamburger" onClick={this.switchHam}>
             <span className="bar1" />
             <span className="bar2" />
             <span className="bar3" />
           </div>
           {this.state.hamActive ? (
             <div className="nav-mobile-container" onClick={this.handleNav}>
-              <div className="nav-mobile-menu">
+              <div className="nav-mobile-menu" onClick={this.switchHam}>
                 <div className="nav-mobile-item" name="home">
                   HOME
                 </div>
@@ -105,11 +94,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  navToHome: () => dispatch(navToHome()),
-  navToConcerts: () => dispatch(navToConcerts()),
-  navToPlans: () => dispatch(navToPlans()),
-  navToUser: () => dispatch(navToUser()),
-  setActiveNav: nav => dispatch(setActiveNav(nav))
+  navTo: nav => dispatch(navTo(nav))
 });
 
 export default connect(

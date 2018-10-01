@@ -17,9 +17,13 @@ class PlanListItem extends Component {
   render() {
     return (
       <div className="plan-list-item">
-        <div className="plan-list-item-name">
-          {this.props.plan.attributes.name}
-          {` (${this.pluralizeFriendLength()})`}
+        <div className="plan-list-item-info">
+          <div className="plan-list-item-name">
+            {this.props.plan.attributes.name}
+          </div>
+          <div className="plan-list-item-friends">
+            {` (${this.pluralizeFriendLength()})`}
+          </div>
         </div>
         <div className="plan-list-item-button">
           <button onClick={this.handleViewPlan}>View Plan</button>
