@@ -1,7 +1,7 @@
 import { token } from "./index";
 
-const plansUrl = "http://localhost:3000/api/v1/plans";
-// const plansUrl = "https://concertplan.herokuapp.com/api/v1/plans"
+// const plansUrl = "http://localhost:3000/api/v1/plans";
+const plansUrl = "https://concertplan.herokuapp.com/api/v1/plans"
 
 export const fetchPlans = () => {
   return dispatch => {
