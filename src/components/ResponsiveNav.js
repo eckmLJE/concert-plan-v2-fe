@@ -7,7 +7,6 @@ class MainNav extends Component {
   state = { hamActive: false };
 
   checkNav = name => {
-    console.log(name);
     return this.props.activeNav === name
       ? "navItem navActive"
       : "navItem navInactive";

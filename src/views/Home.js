@@ -7,17 +7,14 @@ const Home = () => {
       <h1>Welcome to ConcertPlan!</h1>
       <div className="home-info">
         <p>
-          Visit Concerts to view upcoming concerts at The Anthem DC pulled from
+          Visit Concerts to view upcoming concerts at DC venues pulled from
           TicketMaster.
         </p>
-        <p>
-          Log In to be able to create and join plans among your friends to
-          attend concerts.
-        </p>
+        <p>Log In to view plans among your friends to attend concerts.</p>
         <p>
           Visit Plans to view a list of plans started by you and your friends.
-          Join the plans and leave comments.
         </p>
+        <p>View Plan details, and join and leave existing plans.</p>
       </div>
     </div>
   );

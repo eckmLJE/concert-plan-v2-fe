@@ -57,11 +57,12 @@ export const addPlanUser = planId => {
       }
     }).then(resp => {
       resp.status === 202
-        ? resp.json().then(console.log)
-        : // .then(json =>
-          //   dispatch({ type: "UPDATE_PATCHED_PLAN", plan: json.data })
-          // )
-          console.log(resp.status);
+        ? resp
+            .json()
+            .then(json =>
+              dispatch({ type: "UPDATE_PATCHED_PLAN", plan: json.data })
+            )
+        : console.log(resp);
     });
   };
 };
