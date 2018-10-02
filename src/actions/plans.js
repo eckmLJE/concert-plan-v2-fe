@@ -1,7 +1,7 @@
 import { token } from "./index";
 
-// const plansUrl = "http://localhost:3000/api/v1/plans";
-const plansUrl = "https://concertplan.herokuapp.com/api/v1/plans"
+const plansUrl = "http://localhost:3000/api/v1/plans";
+// const plansUrl = "https://concertplan.herokuapp.com/api/v1/plans"
 
 export const fetchPlans = () => {
   return dispatch => {
@@ -79,7 +79,7 @@ export const addPlanUser = planId => {
 export const removePlanUser = planId => {
   return dispatch => {
     dispatch({ type: "START_ADDING_PLAN_USER" });
-    return fetch(plansUrl + `/${planId}`, {
+    return fetch(plansUrl + `/remove_user/${planId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

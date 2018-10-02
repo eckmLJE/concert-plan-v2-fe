@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 
 import { removePlanUser } from "../actions/plans";
 
-const LeavePlanButton = () => {
+const LeavePlanButton = props => {
   return (
     <div className="leave-plan">
-      <button onClick={() => console.log("not yet functional")}>
+      <button onClick={() => props.removePlanUser(props.plan.id)}>
         Leave Plan
       </button>
     </div>
