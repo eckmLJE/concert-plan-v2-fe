@@ -14,14 +14,17 @@ class Plans extends Component {
 
   render() {
     return (
-      <div className="plans">{!!this.props.plans.length && <PlansList />}</div>
+      <div className="plans">
+      {this.props.loggedIn ? null : <h2>Log in to make and view Plans.</h2>}
+      {!!this.props.plans.length && <PlansList />}
+      </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
   plans: state.plans.plans,
-  loggedIn: state.plans.loggedIn
+  loggedIn: state.user.loggedIn
 });
 
 const mapDispatchToProps = dispatch => ({
