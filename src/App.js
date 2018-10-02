@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import Home from "./views/Home";
 import Concerts from "./views/Concerts";
 import Plans from "./views/Plans";
-import PlanView from "./views/PlanView"
+import PlanView from "./views/PlanView";
 import User from "./views/User";
 
 import Header from "./views/Header";
@@ -19,8 +19,6 @@ class App extends Component {
   componentDidMount = () => {
     this.props.loadUser();
   };
-
-
 
   render() {
     return (

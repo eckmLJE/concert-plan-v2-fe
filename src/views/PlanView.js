@@ -5,13 +5,13 @@ import "../css/PlanView.css";
 import { connect } from "react-redux";
 
 import { navTo } from "../actions/navs";
+import { clearCurrentPlan } from "../actions/plans";
 
 import PlanViewItem from "../components/PlanViewItem";
 
 class PlanView extends Component {
-  findPlanFromParams = () => {
-    const planId = this.props.match.params.id;
-    return this.props.plans.find(plan => plan.id === planId);
+  componentDidMount = () => {
+    this.props.clearCurrentPlan();
   };
 
   render() {
@@ -23,20 +23,22 @@ class PlanView extends Component {
             BACK TO PLANS
           </div>
         </div>
-        {!!this.props.plans.length && (
-          <PlanViewItem plan={this.findPlanFromParams()} />
-        )}
+        {this.props.plans.length ? (
+          <PlanViewItem planId={this.props.match.params.id} />
+        ) : null}
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  plans: state.plans.plans
+  plans: state.plans.plans,
+  currentPlan: state.plans.currentPlan
 });
 
 const mapDispatchToProps = dispatch => ({
-  navTo: nav => dispatch(navTo(nav))
+  navTo: nav => dispatch(navTo(nav)),
+  clearCurrentPlan: () => dispatch(clearCurrentPlan())
 });
 
 export default connect(

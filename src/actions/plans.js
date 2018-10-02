@@ -22,6 +22,15 @@ export const fetchPlans = () => {
   };
 };
 
+export const setCurrentPlan = plan => ({
+  type: "SET_CURRENT_PLAN",
+  plan
+});
+
+export const clearCurrentPlan = () => ({
+  type: "CLEAR_CURRENT_PLAN"
+});
+
 export const postPlan = plan => {
   return dispatch => {
     dispatch({ type: "START_POSTING_PLAN" });

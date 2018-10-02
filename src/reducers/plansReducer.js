@@ -26,6 +26,16 @@ const plansReducer = (
         ...state,
         plansNoAuth: true
       };
+    case "SET_CURRENT_PLAN":
+      return {
+        ...state,
+        currentPlan: action.plan
+      };
+    case "CLEAR_CURRENT_PLAN":
+      return {
+        ...state,
+        currentPlan: null
+      };
     case "START_POSTING_PLAN":
       return {
         ...state,
@@ -41,6 +51,11 @@ const plansReducer = (
       return {
         ...state,
         plans: []
+      };
+    case "UPDATE_PATCHED_PLAN":
+      return {
+        ...state,
+        currentPlan: action.plan
       };
     default:
       return state;
