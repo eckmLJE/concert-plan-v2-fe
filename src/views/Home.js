@@ -23,6 +23,10 @@ const Home = () => {
         </p>
         <p>Email: name@example.com </p>
         <p>Password: name</p>
+        <h4>
+          NB: Heroku sometimes takes 15 seconds to spool up the free server this
+          project is hosted on. Please be patient while logging in. :)
+        </h4>
       </div>
     </div>
   );
