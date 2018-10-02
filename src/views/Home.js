@@ -15,6 +15,14 @@ const Home = () => {
           Visit Plans to view a list of plans started by you and your friends.
         </p>
         <p>View Plan details, and join and leave existing plans.</p>
+        <p>
+          <strong>
+            The user names are lucas, josh, alex, and conor. You can log in as
+            any of these users with the following pattern:
+          </strong>
+        </p>
+        <p>Email: name@example.com </p>
+        <p>Password: name</p>
       </div>
     </div>
   );
