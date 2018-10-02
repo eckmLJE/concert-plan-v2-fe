@@ -1,6 +1,6 @@
 const navReducer = (
   state = {
-    activeNav: null
+    activeNav: ""
   },
   action
 ) => {

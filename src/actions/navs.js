@@ -9,7 +9,7 @@ export const navTo = nav => {
   return dispatch => {
     dispatch({ type: "CLEAR_PLANS" });
     dispatch({ type: "SET_ACTIVE_NAV", nav });
-    dispatch(push(`/${nav}`));
+    nav !== "home" ? dispatch(push(`/${nav}`)) : dispatch(push("/"));
   };
 };
 

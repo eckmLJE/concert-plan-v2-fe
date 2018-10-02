@@ -1,17 +1,13 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 
-import { navToHome } from "../actions/navs";
-import { navToConcerts } from "../actions/navs";
-import { navToPlans } from "../actions/navs";
-import { navToUser } from "../actions/navs";
-
 import { navTo } from "../actions/navs";
 
 class MainNav extends Component {
   state = { hamActive: false };
 
   checkNav = name => {
+    console.log(name);
     return this.props.activeNav === name
       ? "navItem navActive"
       : "navItem navInactive";
@@ -25,17 +21,14 @@ class MainNav extends Component {
 
   handleNav = e => {
     const nav = e.target.getAttribute("name");
-    console.log(nav);
-    if (nav || nav === "") {
-      this.props.navTo(nav);
-    }
+    this.props.navTo(nav);
   };
 
   render() {
     return (
       <Fragment>
         <div className="nav" onClick={this.handleNav}>
-          <div name="" className={this.checkNav("")}>
+          <div name="home" className={this.checkNav("home")}>
             HOME
           </div>
           <div name="concerts" className={this.checkNav("concerts")}>
