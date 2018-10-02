@@ -54,9 +54,9 @@ class PlanViewPanel extends Component {
             {this.checkPlanStarter()} started this plan.
           </div>
           {this.props.currentUser && this.checkPlanUsers() ? (
-            <LeavePlanButton plan={this.props.plan} />
+            <LeavePlanButton plan={this.props.currentPlan} />
           ) : (
-            <JoinPlanButton plan={this.props.plan} />
+            <JoinPlanButton plan={this.props.currentPlan} />
           )}
           <div className="plan-users">
             <h4>Signed on friends:</h4>

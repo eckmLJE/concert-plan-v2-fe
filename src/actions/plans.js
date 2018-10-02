@@ -75,3 +75,25 @@ export const addPlanUser = planId => {
     });
   };
 };
+
+export const removePlanUser = planId => {
+  return dispatch => {
+    dispatch({ type: "START_ADDING_PLAN_USER" });
+    return fetch(plansUrl + `/${planId}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${token()}`
+      }
+    }).then(resp => {
+      resp.status === 202
+        ? resp
+            .json()
+            .then(json =>
+              dispatch({ type: "UPDATE_PATCHED_PLAN", plan: json.data })
+            )
+        : console.log(resp);
+    });
+  };
+};

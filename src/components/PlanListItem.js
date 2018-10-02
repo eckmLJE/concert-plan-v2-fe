@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { navToPlanId } from "../actions/navs";
-import { setCurrentPlan } from "../actions/plans"
 
 class PlanListItem extends Component {
   pluralizeFriendLength = () => {
@@ -12,9 +11,7 @@ class PlanListItem extends Component {
 
   handleViewPlan = e => {
     e.preventDefault();
-    const planId = this.props.plan.id
-    this.props.setCurrentPlan(planId)
-    this.props.navToPlanId(planId);
+    this.props.navToPlanId(this.props.plan.id);
   };
 
   render() {
@@ -42,8 +39,7 @@ class PlanListItem extends Component {
 // });
 
 const mapDispatchToProps = dispatch => ({
-  navToPlanId: id => dispatch(navToPlanId(id)),
-  setCurrentPlan: id => dispatch(setCurrentPlan(id))
+  navToPlanId: id => dispatch(navToPlanId(id))
 });
 
 export default connect(

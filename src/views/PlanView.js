@@ -5,13 +5,12 @@ import "../css/PlanView.css";
 import { connect } from "react-redux";
 
 import { navTo } from "../actions/navs";
-import { clearCurrentPlan } from "../actions/plans";
+
 
 import PlanViewItem from "../components/PlanViewItem";
 
 class PlanView extends Component {
   componentDidMount = () => {
-    this.props.clearCurrentPlan();
   };
 
   render() {
@@ -37,8 +36,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  navTo: nav => dispatch(navTo(nav)),
-  clearCurrentPlan: () => dispatch(clearCurrentPlan())
+  navTo: nav => dispatch(navTo(nav))
 });
 
 export default connect(

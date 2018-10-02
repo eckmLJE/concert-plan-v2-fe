@@ -3,9 +3,11 @@ import { connect } from "react-redux";
 
 import PlanViewPanel from "./PlanViewPanel";
 import { setCurrentPlan } from "../actions/plans";
+import { clearCurrentPlan } from "../actions/plans";
 
 class PlanViewItem extends Component {
   componentDidMount = () => {
+    this.props.clearCurrentPlan();
     const currentPlan = this.findPlanFromParams();
     this.props.setCurrentPlan(currentPlan);
   };
@@ -14,8 +16,6 @@ class PlanViewItem extends Component {
     const planId = this.props.planId;
     return this.props.plans.find(plan => plan.id === planId);
   };
-
-  
 
   render() {
     return (
@@ -31,7 +31,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setCurrentPlan: plan => dispatch(setCurrentPlan(plan))
+  setCurrentPlan: plan => dispatch(setCurrentPlan(plan)),
+  clearCurrentPlan: () => dispatch(clearCurrentPlan())
 });
 
 export default connect(
