@@ -71,7 +71,7 @@ export const addPlanUser = planId => {
             .then(json =>
               dispatch({ type: "UPDATE_PATCHED_PLAN", plan: json.data })
             )
-        : console.log(resp);
+        : console.log("initial auth failure");
     });
   };
 };
@@ -93,7 +93,7 @@ export const removePlanUser = planId => {
             .then(json =>
               dispatch({ type: "UPDATE_PATCHED_PLAN", plan: json.data })
             )
-        : console.log(resp);
+        : console.log("initial auth failure");
     });
   };
 };
