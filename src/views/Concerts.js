@@ -7,6 +7,7 @@ import { fetchConcerts } from "../actions/concerts";
 import { fetchPlans } from "../actions/plans";
 
 import ConcertList from "../containers/ConcertList";
+import Spinner from "../components/Spinner";
 
 class Concerts extends Component {
   componentDidMount = () => {
@@ -17,11 +18,7 @@ class Concerts extends Component {
   render() {
     return (
       <div className="concerts">
-        {this.props.concerts.length ? (
-          <ConcertList />
-        ) : (
-          <h1>Loading Concerts...</h1>
-        )}
+        {this.props.concerts.length ? <ConcertList /> : <Spinner />}
       </div>
     );
   }
