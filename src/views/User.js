@@ -6,11 +6,18 @@ import "../css/User.css";
 import LoginPanel from "../components/LoginPanel";
 import UserPanel from "../components/UserPanel";
 
+import Spinner from "../components/Spinner";
+
 class User extends Component {
   render() {
     return (
       <div className="user">
-        {!this.props.loggedIn && <LoginPanel />}
+        {!this.props.loggedIn &&
+          !this.props.loadingAuthStatus && <LoginPanel />}
+        {!!this.props.loadingAuthStatus && (
+          <Spinner content="Loading User..." />
+        )}
+
         {!!this.props.currentUser && <UserPanel />}
       </div>
     );

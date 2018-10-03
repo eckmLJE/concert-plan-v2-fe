@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "../css/Plans.css"
-import "../css/Buttons.css"
+import "../css/Plans.css";
+import "../css/Buttons.css";
 
 import { fetchPlans } from "../actions/plans";
 
 import PlansList from "../containers/PlanList";
+import Spinner from "../components/Spinner";
 
 class Plans extends Component {
   componentDidMount = () => {
@@ -15,8 +16,8 @@ class Plans extends Component {
   render() {
     return (
       <div className="plans">
-      {this.props.loggedIn ? null : <h2>Log in to make and view Plans.</h2>}
-      {!!this.props.plans.length && <PlansList />}
+        {this.props.loggedIn ? null : <h2>Log in to make and view Plans.</h2>}
+        {!!this.props.plans.length ? <PlansList /> : <Spinner />}
       </div>
     );
   }
