@@ -8,7 +8,7 @@ class LoginPanel extends Component {
 
   handleInput = e => {
     const property = e.target.getAttribute("name");
-    const change = e.target.value;
+    const change = e.target.value.toLowerCase();
     this.setState({
       [property]: change
     });
