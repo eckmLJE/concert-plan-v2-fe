@@ -1,12 +1,29 @@
 /* HOME */
 
 .home {
-    position: relative;
-    width: 100%;
-    padding: 20px;
-  }
-  
+  position: relative;
+  width: 100%;
+  padding: 20px;
+}
+
 .home-info p {
   font-size: 1.2em;
   padding: 5px;
+}
+
+.home-card {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  width: 50%;
+  min-width: 300px;
+  border-left: 5px solid rgb(207, 12, 126);
+  padding: 20px;
+  margin: auto;
+}
+
+.server-loaded {
+  color: rgb(207, 12, 126);
+}
+
+.server-loading {
+  color: gray;
 }

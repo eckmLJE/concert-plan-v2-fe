@@ -17,7 +17,8 @@ class Plans extends Component {
     return (
       <div className="plans">
         {this.props.loggedIn ? null : <h2>Log in to make and view Plans.</h2>}
-        {!!this.props.plans.length ? <PlansList /> : <Spinner />}
+        {!!this.props.loggedIn && !this.props.plans.length ? <Spinner /> : null}
+        {!!this.props.plans.length ? <PlansList /> : null}
       </div>
     );
   }
