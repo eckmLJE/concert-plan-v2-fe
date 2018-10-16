@@ -28,6 +28,12 @@
 .loading-container p {
   font-size: 0.75em;
   color: rgb(87, 87, 87);
+  margin-top: 0;
+}
+
+.loading-container h4 {
+  margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 .server-loaded {

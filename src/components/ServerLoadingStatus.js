@@ -12,15 +12,21 @@ class ServerLoadingStatus extends Component {
     return (
       <div className="home-card">
         <div className="loading-container">
-          Heroku Loading Status:{" "}
-          <span
-            className={
-              this.props.herokuLoaded ? "server-loaded" : "server-loading"
-            }
-          >
-            {this.props.herokuLoaded ? "LOADED!" : "Loading..."}
-          </span>
-        <p>Heroku Free may take 10 seconds or so to spin up the back end. Thanks for your patience!</p>
+          <h4>
+            Heroku Loading Status:{" "}
+            <span
+              className={
+                this.props.herokuLoaded ? "server-loaded" : "server-loading"
+              }
+            >
+              {this.props.herokuLoaded ? "LOADED!" : "Loading..."}
+            </span>
+          </h4>
+
+          <p>
+            Heroku Free may take 10 seconds or so to spin up the back end.
+            Thanks for your patience!
+          </p>
         </div>
       </div>
     );
