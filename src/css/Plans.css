@@ -113,6 +113,23 @@
   color: white;
 }
 
+.add-plan-comment {
+  padding: 10px;
+}
+
+.plan-comment-list {
+  padding: 10px;
+}
+
+.plan-comment-card {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  width: 90%;
+  min-width: 300px;
+  border-left: 5px solid rgb(207, 12, 126);
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
 @media only screen and (max-width: 575px) {
   .plan-list-item-info {
     width: 100%;

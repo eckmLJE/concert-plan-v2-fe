@@ -57,6 +57,28 @@ const plansReducer = (
         ...state,
         currentPlan: action.plan
       };
+    case "START_POSTING_COMMENT":
+      return state;
+    case "ADD_POSTED_COMMENT":
+      console.log(action.comment);
+      const newComment = {
+        id: action.comment.id,
+        user_id: action.comment.attributes["user-id"],
+        plan_id: action.comment.attributes["plan-id"],
+        user_name: action.comment.attributes["user-name"],
+        content: action.comment.attributes.content,
+        created_at: action.comment.attributes["created-at"]
+      };
+      return {
+        ...state,
+        currentPlan: {
+          ...state.currentPlan,
+          attributes: {
+            ...state.currentPlan.attributes,
+            comments: [...state.currentPlan.attributes.comments, newComment]
+          }
+        }
+      };
     default:
       return state;
   }

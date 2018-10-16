@@ -1,7 +1,10 @@
 import { token } from "./index";
 
-// const plansUrl = "http://localhost:3000/api/v1/plans";
-const plansUrl = "https://concertplan.herokuapp.com/api/v1/plans"
+const plansUrl = "http://localhost:3000/api/v1/plans";
+// const plansUrl = "https://concertplan.herokuapp.com/api/v1/plans"
+
+const commentsUrl = "http://localhost:3000/api/v1/comments";
+// const plansUrl = "https://concertplan.herokuapp.com/api/v1/comments"
 
 export const fetchPlans = () => {
   return dispatch => {
@@ -94,6 +97,29 @@ export const removePlanUser = planId => {
               dispatch({ type: "UPDATE_PATCHED_PLAN", plan: json.data })
             )
         : console.log("initial auth failure");
+    });
+  };
+};
+
+export const postComment = comment => {
+  return dispatch => {
+    dispatch({ type: "START_POSTING_COMMENT" });
+    return fetch(commentsUrl, {
+      method: "POST",
+      body: JSON.stringify(comment),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${token()}`
+      }
+    }).then(resp => {
+      resp.status === 202
+        ? resp
+            .json()
+            .then(json =>
+              dispatch({ type: "ADD_POSTED_COMMENT", comment: json.data })
+            )
+        : dispatch({ type: "COMMENTS_AUTH_FAILED" });
     });
   };
 };
