@@ -7,6 +7,7 @@ import { fetchConcerts } from "../actions/concerts";
 import { fetchPlans } from "../actions/plans";
 
 import ConcertList from "../containers/ConcertList";
+import VenueSelector from "../components/VenueSelector";
 import Spinner from "../components/Spinner";
 
 class Concerts extends Component {
@@ -18,6 +19,7 @@ class Concerts extends Component {
   render() {
     return (
       <div className="concerts">
+        <VenueSelector />
         {this.props.concerts.length ? <ConcertList /> : <Spinner />}
       </div>
     );

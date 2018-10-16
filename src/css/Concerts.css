@@ -25,16 +25,45 @@
   padding: 0 20px 10px 0;
 }
 
-.concert-item h3{
+.concert-item h3 {
   margin-top: 0;
 }
 
 .concert-item-details {
 }
 
-@media only screen and (max-width: 525px) {
+.venue-selector {
+  margin-bottom: 20px;
+}
+
+.venue-selector-main {
+  position: relative;
+  margin: auto;
+}
+
+.venue-selector-mobile {
+  position: relative;
+  margin: auto;
+}
+
+.venue-button-active {
+  display: inline-block;
+}
+.venue-button-inactive {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 550px) {
   .concert-item img {
     display: none;
   }
-  
+  .venue-selector-main {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 551px) {
+  .venue-selector-mobile {
+    display: none;
+  }
 }
