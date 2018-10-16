@@ -21,6 +21,15 @@
   margin-bottom: 20px;
 }
 
+.home-card p {
+  font-size: 0.9em;
+}
+
+.home-card span {
+  font-weight: 800;
+  color: rgb(207, 12, 126);
+}
+
 .home-card-nav {
   font-weight: 700;
 }

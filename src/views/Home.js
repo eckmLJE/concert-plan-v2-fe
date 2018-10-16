@@ -9,15 +9,15 @@ const Home = () => {
       <ServerLoadingStatus />
       <div className="home-card">
         <p>
-          LOG IN first in order to view plans among your friends to attend
-          concerts. Logging in also allows you to start plans from CONCERTS.
+          <span>LOG IN</span> first in order to view plans among your friends to attend
+          concerts. Logging in also allows you to start plans from <span>CONCERTS</span>.
         </p>
         <p>
-          Visit CONCERTS to view upcoming concerts at DC venues pulled from
+          Visit <span>CONCERTS</span> to view upcoming concerts at DC venues pulled from
           TicketMaster.
         </p>
         <p>
-          Visit PLANS to view a list of plans started by you and your friends,
+          Visit <span>PLANS</span> to view a list of plans started by you and your friends,
           view Plan details, and join and leave existing plans.
         </p>
       </div>
