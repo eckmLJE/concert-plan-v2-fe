@@ -1,7 +1,7 @@
 import { fetchPlans } from "./plans";
 
-const url = "http://localhost:3000/api/v1";
-// const url = "https://concertplan.herokuapp.com/api/v1"
+// const url = "http://localhost:3000/api/v1";
+const url = "https://concertplan.herokuapp.com/api/v1"
 
 const token = () => {
   return localStorage.getItem("token");
