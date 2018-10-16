@@ -9,11 +9,6 @@ class ServerLoadingStatus extends Component {
   };
 
   render() {
-    console.log(
-      `Loading Status: ${this.props.herokuLoadingStatus}`,
-      `\nLoaded: ${this.props.herokuLoaded}`,
-      `\nLoading Failed: ${this.props.herokuLoadFailed}`
-    );
     return (
       <div className="home-card">
         <div className="loading-container">
@@ -23,8 +18,9 @@ class ServerLoadingStatus extends Component {
               this.props.herokuLoaded ? "server-loaded" : "server-loading"
             }
           >
-            {this.props.herokuLoaded ? "LOADED!" : "LOADING..."}
+            {this.props.herokuLoaded ? "LOADED!" : "Loading..."}
           </span>
+        <p>Heroku Free may take 10 seconds or so to spin up the back end. Thanks for your patience!</p>
         </div>
       </div>
     );

@@ -25,10 +25,25 @@
   font-weight: 700;
 }
 
+.loading-container p {
+  font-size: 0.75em;
+  color: rgb(87, 87, 87);
+}
+
 .server-loaded {
   color: rgb(207, 12, 126);
 }
 
 .server-loading {
   color: gray;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    color: rgb(73, 104, 134);
+  }
+  100% {
+    color: gray;
+  }
 }
