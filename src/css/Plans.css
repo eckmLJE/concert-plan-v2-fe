@@ -130,6 +130,16 @@
   margin-bottom: 20px;
 }
 
+.plan-comment-card p {
+  font-size: 0.75em;
+  color: gray;
+}
+
+.plan-comment-card span {
+  font-size: 1em;
+  color: rgb(207, 12, 126);
+}
+
 @media only screen and (max-width: 575px) {
   .plan-list-item-info {
     width: 100%;

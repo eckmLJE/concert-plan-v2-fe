@@ -18,6 +18,7 @@ class CommentAddNew extends Component {
       content: this.state.content
     };
     this.props.postComment(comment);
+    this.setState({content: ""})
   };
 
   render() {
