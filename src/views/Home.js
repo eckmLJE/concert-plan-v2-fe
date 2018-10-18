@@ -21,14 +21,6 @@ const Home = () => {
           view Plan details, and join and leave existing plans.
         </p>
       </div>
-      <div className="home-card">
-        <p>The user names are lucas, josh, alex, and conor.</p>
-        <p>Log in with the following pattern:</p>
-        <p>
-          <strong>Email:</strong> name@example.com | <strong>Password:</strong>{" "}
-          name
-        </p>
-      </div>
     </div>
   );
 };

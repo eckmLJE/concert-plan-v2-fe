@@ -12,6 +12,35 @@ class User extends Component {
   render() {
     return (
       <div className="user">
+        <div className="user-card">
+          <h3>LOGIN INSTRUCTIONS</h3>
+          <p>
+            Log in with any of these four users to see their friend group's
+            plans in action:
+          </p>
+          <ul>
+            <li>
+              <strong>email:</strong> alex@example.com
+              <br />
+              <strong>password:</strong> alex
+            </li>
+            <li>
+              <strong>email:</strong> conor@example.com
+              <br />
+              <strong>password:</strong> conor
+            </li>
+            <li>
+              <strong>email:</strong> josh@example.com
+              <br />
+              <strong>password:</strong> josh
+            </li>
+            <li>
+              <strong>email:</strong> lucas@example.com
+              <br />
+              <strong>password:</strong> lucas
+            </li>
+          </ul>
+        </div>
         {!this.props.loggedIn &&
           !this.props.loadingAuthStatus && <LoginPanel />}
         {!!this.props.loadingAuthStatus && (

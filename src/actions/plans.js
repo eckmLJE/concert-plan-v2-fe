@@ -1,7 +1,7 @@
 import { token } from "./index";
 
-// const plansUrl = "http://localhost:3000/api/v1/plans";
-const plansUrl = "https://concertplan.herokuapp.com/api/v1/plans"
+const plansUrl = "http://localhost:3000/api/v1/plans";
+// const plansUrl = "https://concertplan.herokuapp.com/api/v1/plans"
 
 // const commentsUrl = "http://localhost:3000/api/v1/comments";
 const commentsUrl = "https://concertplan.herokuapp.com/api/v1/comments"
