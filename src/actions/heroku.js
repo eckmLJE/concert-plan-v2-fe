@@ -12,7 +12,6 @@ export const pingServer = () => {
     }).then(resp => {
       resp.status === 200
         ? resp.json().then(json => {
-            console.log(json);
             dispatch({ type: "HEROKU_PING_SUCCESS" });
           })
         : dispatch({ type: "HEROKU_PING_FAIL" });

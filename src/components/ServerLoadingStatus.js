@@ -23,10 +23,8 @@ class ServerLoadingStatus extends Component {
             </span>
           </h4>
 
-          <p>
-            Heroku Free may take 10 seconds or so to spin up the back end.
-            Thanks for your patience!
-          </p>
+          <p>Heroku Free may take 10 seconds or so to spin up the back end.</p>
+          <p>Thanks for your patience!</p>
         </div>
       </div>
     );

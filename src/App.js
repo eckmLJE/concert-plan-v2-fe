@@ -8,7 +8,7 @@ import Home from "./views/Home";
 import Concerts from "./views/Concerts";
 import Plans from "./views/Plans";
 import PlanView from "./views/PlanView";
-import User from "./views/User";
+// import User from "./views/User";
 
 import Header from "./views/Header";
 import Footer from "./views/Footer";
@@ -29,7 +29,7 @@ class App extends Component {
           <Route exact path="/concerts" component={Concerts} />
           <Route exact path="/plans" component={Plans} />
           <Route path="/plans/:id" component={PlanView} />
-          <Route exact path="/profile" component={User} />
+          {/* <Route exact path="/profile" component={User} /> */}
         </div>
         <Footer />
       </div>
