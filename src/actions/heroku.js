@@ -1,5 +1,5 @@
-const pingUrl = "http://localhost:3000/api/v1/ping";
-// const pingUrl = "https://concertplan.herokuapp.com/api/v1/ping";
+// const pingUrl = "http://localhost:3000/api/v1/ping";
+const pingUrl = "https://concertplan.herokuapp.com/api/v1/ping";
 
 export const pingServer = () => {
   return dispatch => {
