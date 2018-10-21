@@ -52,8 +52,8 @@
 }
 
 .server-loading {
-  color: gray;
-  animation: pulse 1s infinite;
+  color: rgb(253, 244, 244);
+  animation: pulse 1s ease-in-out infinite;
 }
 
 @keyframes pulse {
@@ -61,6 +61,6 @@
     color: rgb(73, 104, 134);
   }
   100% {
-    color: gray;
+    color: silver;
   }
 }

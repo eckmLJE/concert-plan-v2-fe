@@ -24,7 +24,7 @@ class LoginPanel extends Component {
   render() {
     return (
       <div className="login">
-        <div>Please log in to view your profile.</div>
+        <div>Please Log In</div>
         <br />
         <form>
           <input

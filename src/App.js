@@ -11,7 +11,7 @@ import PlanView from "./views/PlanView";
 // import User from "./views/User";
 
 import Header from "./views/Header";
-import Footer from "./views/Footer";
+// import Footer from "./views/Footer";
 
 import { loadUser } from "./actions/user";
 
@@ -31,7 +31,7 @@ class App extends Component {
           <Route path="/plans/:id" component={PlanView} />
           {/* <Route exact path="/profile" component={User} /> */}
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     );
   }
